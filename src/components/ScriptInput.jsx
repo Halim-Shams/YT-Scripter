@@ -31,7 +31,7 @@ const ScriptInput = () => {
 					</button>
 				</form>
 			) : (
-				<GeneratedScript />
+				<GeneratedScript script={text} />
 			)}
 		</div>
 	);

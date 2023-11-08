@@ -2,9 +2,10 @@ import {Navigate} from 'react-router-dom';
 
 const ProtectedPage = ({children, auth}) => {
 	if (auth) {
-		return <Navigate to='/url' />;
+		return <Navigate to='/script' />;
+	} else {
+		return children;
 	}
-	return children;
 };
 
 export default ProtectedPage;

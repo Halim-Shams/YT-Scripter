@@ -1,14 +1,18 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import {Outlet} from 'react-router-dom';
+import {Navigate} from 'react-router-dom';
 
-const Mom = () => {
-	return (
-		<main className='mt-6'>
-			<Navbar />
-			<Outlet />
-		</main>
-	);
+const Mom = ({auth, children}) => {
+	if (auth) {
+		return (
+			<main className='mt-6'>
+				<Navbar />
+				{children}
+			</main>
+		);
+	} else {
+		return <Navigate to='/' />;
+	}
 };
 
 export default Mom;
